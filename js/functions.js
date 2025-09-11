@@ -7,3 +7,29 @@ function printMessage(msg){
 function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
+
+function getMoveName(argMoveId){
+	if(argMoveId == 1){
+		return 'kamień';
+	} else if (argMoveId == 2){
+		return 'papier';	
+	} else if (argMoveId == 3){
+		return 'nożyce';	
+	} else {
+		printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+		return 'nieznany ruch';
+	}
+}
+
+function displayResult(argComputerMove, argPlayerMove){
+	printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+if( argComputerMove == 'kamień' && argPlayerMove == 'papier' || argComputerMove == 'papier' && argPlayerMove == 'nożyce' || argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
+  printMessage('Wygrywasz!');
+}
+else if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce' || argComputerMove == 'papier' && argPlayerMove == 'kamień' || argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
+   printMessage('Przegrywasz :(');
+}
+else if (argComputerMove == argPlayerMove){
+   printMessage('Remis, zagrajmy jeszcze raz');
+}
+}
