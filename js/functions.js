@@ -33,3 +33,8 @@ else if (argComputerMove == argPlayerMove){
    printMessage('Remis, zagrajmy jeszcze raz');
 }
 }
+
+function buttonClicked(){
+	printMessage('Kliknieto kamień');
+
+}
